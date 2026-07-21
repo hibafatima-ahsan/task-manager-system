@@ -265,3 +265,8 @@ def highest_priority_task():
     if highest.get("type") == "project" or ("project_name" in highest and "deadline" in highest):
         print(f"Project Name : {highest['project_name']}")
         print(f"Deadline     : {highest['deadline']}")
+#validation method
+def validate_due_date(due_date):
+    if due_date.strip() == "":
+        return False
+    return True
