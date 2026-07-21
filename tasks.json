@@ -1,0 +1,20 @@
+[
+    {
+        "task_id": "001",
+        "title": "project presentation",
+        "description": "presentation about the idea of project and its all core things needed for it ",
+        "assigned_to": "hiba fatima",
+        "priority": 2,
+        "status": "Pending",
+        "type": "normal"
+    },
+    {
+        "task_id": "002",
+        "title": "printing",
+        "description": "intern duty for printing evry document for the supervisor. enhancing speed and professionalism at work ",
+        "assigned_to": "hiba(intern)",
+        "priority": 4,
+        "status": "Pending",
+        "type": "normal"
+    }
+]
