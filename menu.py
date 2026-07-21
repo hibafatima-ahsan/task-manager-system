@@ -14,6 +14,7 @@ def display_menu():
     print("5. Delete Task")
     print("6. View Completed Tasks")
     print("7. View Highest Priority Task")
-    print("8. Exit")
+    print("8. View Task Statistics")
+    print("9. Exit")
 
     print("=" * 50)
