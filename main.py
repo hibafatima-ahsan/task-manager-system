@@ -7,6 +7,7 @@ from task_manager import (
     delete_task,
     completed_tasks,
     highest_priority_task,
+    task_statistics,
 )
 
 
@@ -39,6 +40,9 @@ def main():
             highest_priority_task()
 
         elif choice == "8":
+            task_statistics()
+
+        elif choice == "9":
             print("\nThank you for using Task Manager!")
             break
 

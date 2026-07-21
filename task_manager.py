@@ -254,3 +254,31 @@ def highest_priority_task():
     if highest.get("type") == "project" or ("project_name" in highest and "deadline" in highest):
         print(f"Project Name : {highest['project_name']}")
         print(f"Deadline     : {highest['deadline']}")
+
+
+# ----------------------------
+# Task Statistics Summary
+# ----------------------------
+def task_statistics():
+
+    tasks = load_tasks()
+
+    if not tasks:
+        print("\nNo Tasks Found!")
+        return
+
+    total = len(tasks)
+    pending = sum(1 for t in tasks if t.get("status") == "Pending")
+    in_progress = sum(1 for t in tasks if t.get("status") == "In Progress")
+    completed = sum(1 for t in tasks if t.get("status") == "Completed")
+    project_tasks = sum(1 for t in tasks if t.get("type") == "project" or "project_name" in t)
+    normal_tasks = total - project_tasks
+
+    print("\n====== TASK STATISTICS ======\n")
+    print(f"Total Tasks         : {total}")
+    print(f"Normal Tasks        : {normal_tasks}")
+    print(f"Project Tasks       : {project_tasks}")
+    print(f"Pending Tasks       : {pending}")
+    print(f"In Progress Tasks   : {in_progress}")
+    print(f"Completed Tasks     : {completed}")
+    print("=" * 30)
