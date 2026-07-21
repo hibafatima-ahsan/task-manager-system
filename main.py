@@ -1,6 +1,7 @@
 from menu import display_menu
 from task_manager import (
     add_task,
+    show_overdue_tasks,
     view_tasks,
     search_task,
     update_status,
@@ -43,6 +44,9 @@ def main():
             task_statistics()
 
         elif choice == "9":
+            show_overdue_tasks()
+            
+        elif choice == "10":
             print("\nThank you for using Task Manager!")
             break
 
