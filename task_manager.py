@@ -4,6 +4,17 @@ from file_handler import load_tasks, save_tasks
 
 
 # ----------------------------
+# Helper: Input Validation
+# ----------------------------
+def get_non_empty_input(prompt):
+    while True:
+        value = input(prompt).strip()
+        if value:
+            return value
+        print("Input cannot be empty! Please try again.")
+
+
+# ----------------------------
 # Add Task
 # ----------------------------
 def add_task():
@@ -15,15 +26,15 @@ def add_task():
 
     task_type = input("Choose Task Type: ")
 
-    task_id = input("Task ID: ")
+    task_id = get_non_empty_input("Task ID: ")
     for existing in tasks:
         if existing.get("task_id") == task_id:
             print(f"Task ID '{task_id}' already exists! Creation aborted.")
             return
 
-    title = input("Title: ")
-    description = input("Description: ")
-    assigned_to = input("Assigned To: ")
+    title = get_non_empty_input("Title: ")
+    description = get_non_empty_input("Description: ")
+    assigned_to = get_non_empty_input("Assigned To: ")
 
     while True:
         try:
